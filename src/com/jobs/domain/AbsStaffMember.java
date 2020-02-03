@@ -18,7 +18,7 @@ public abstract class AbsStaffMember {
 		if (phone.equals(""))
 			throw new Exception();
 
-		this.name = name;
+		this.setName(name);
 		this.address = address;
 		this.phone = phone;
 		id = COUNTER_MEMBERS;
@@ -26,4 +26,36 @@ public abstract class AbsStaffMember {
 	}
 
 	public abstract void pay();
+
+	public int getid() {
+		return id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+	public String getAddress() {
+		return address;
+	}
+	
+	public String getPhone() {
+		return phone;
+	}
+	
+	public double getTotalPaid() {
+		return totalPaid;
+	}
+
+	public String getDescription() {
+		return null;
+	}
+
+
 }

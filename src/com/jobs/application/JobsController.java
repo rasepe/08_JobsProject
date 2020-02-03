@@ -1,11 +1,12 @@
 package com.jobs.application;
 
 import com.jobs.domain.Employee;
+import com.jobs.domain.Volunteer;
 import com.jobs.persistence.EmployeeRepository;
 
 public class JobsController {
 
-	private EmployeeRepository repository;
+	private EmployeeRepository repository = new EmployeeRepository();
 	
 	public JobsController(){
 		
@@ -17,28 +18,53 @@ public class JobsController {
 	}
 	
 	public void createEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{		
-		Employee boss = new Employee(name, address, phone,  salaryPerMonth, PaymentFactory.createPaymentRateEmployee());
-		repository.addMember(boss);
+		Employee employee = new Employee(name, address, phone,  salaryPerMonth, PaymentFactory.createPaymentRateEmployee());
+		repository.addMember(employee);
 	}
 
 	public void createManagerEmployee(String name, String address, String phone, double salaryPerMonth) throws Exception{
-		// TODO Auto-generated method stub
+		Employee manager = new Employee(name, address, phone,  salaryPerMonth, PaymentFactory.createPaymentRateManager());
+		repository.addMember(manager);
 		
 	}
 
 
 	public void payAllEmployeers() {
-		// TODO Auto-generated method stub
+
+		
+		  for (int i=0; i<repository.getAllMembers().size(); i++) {
+			  repository.getAllMembers().get(i).pay();
+		  }
 	
 	}
 
 	public String getAllEmployees() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		repository.getAllMembers();
+		
+		String cadena="";
+		
+		  for (int i=0; i<repository.getAllMembers().size(); i++) {
+			  cadena += repository.getAllMembers().get(i).getid() + "\n";
+		  cadena += repository.getAllMembers().get(i).getName() + "\n";
+		  
+		  cadena += repository.getAllMembers().get(i).getAddress() + "\n";
+		  cadena += repository.getAllMembers().get(i).getPhone() + "\n";
+		  cadena += repository.getAllMembers().get(i).getTotalPaid() + "\n";
+		  if (repository.getAllMembers().get(i).getDescription() != null) {
+		  cadena += repository.getAllMembers().get(i).getDescription() + "\n";
+		  }
+		  cadena += "\n";
+		  }
+		 
+		
+		  return cadena;
 	}
 
-	public void createVolunteer(String string, String string2, String string3) {
-		// TODO Auto-generated method stub
+	public void createVolunteer(String name, String address, String phone, String description) throws Exception {
+		
+		Volunteer volunteer = new Volunteer(name, address, phone, description) ;
+		repository.addMember(volunteer);
 		
 	}
 	
