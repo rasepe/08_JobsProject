@@ -4,7 +4,7 @@ import com.jobs.domain.IPaymentRate;
 
 public class PaymentFactory {
 
-	
+
 	public static IPaymentRate createPaymentRateBoss(){
 		return new IPaymentRate() {	
 			@Override
@@ -13,7 +13,7 @@ public class PaymentFactory {
 			}
 		};
 	}
-	
+
 	public static IPaymentRate createPaymentRateEmployee(){
 		return new IPaymentRate() {
 			@Override
@@ -22,8 +22,8 @@ public class PaymentFactory {
 			}
 		};
 	}
-	
-	
+
+
 	public static IPaymentRate createPaymentRateManager(){
 		return new IPaymentRate() {
 			@Override

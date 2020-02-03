@@ -30,7 +30,7 @@ public abstract class AbsStaffMember {
 	public int getid() {
 		return id;
 	}
-	
+
 	public String getName() {
 		return name;
 	}
@@ -44,11 +44,11 @@ public abstract class AbsStaffMember {
 	public String getAddress() {
 		return address;
 	}
-	
+
 	public String getPhone() {
 		return phone;
 	}
-	
+
 	public double getTotalPaid() {
 		return totalPaid;
 	}
