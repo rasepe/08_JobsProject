@@ -21,9 +21,24 @@ public class Volunteer extends AbsStaffMember {
 		
 	}
 	
-	@Override
+
 	public String getDescription() {
 		return description;
 	}
 
+	
+	@Override
+	public String toString() {
+		
+		String cadena ="";
+
+		cadena += "Id: " + getid() + "\n";
+		cadena += "Name: " + getName() + "\n";
+		cadena += "Address: " + getAddress() + "\n";
+		cadena += "Phone: " + getPhone() + "\n";
+		cadena += "Description: " +	getDescription() + "\n";
+
+		return cadena;
+		
+	}
 }

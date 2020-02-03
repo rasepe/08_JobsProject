@@ -45,18 +45,9 @@ public class JobsController {
 		String cadena="";
 
 		for (int j=0; j<repository.getAllMembers().size(); j++) {
-			cadena += repository.getAllMembers().get(j).getid() + "\n";
-			cadena += repository.getAllMembers().get(j).getName() + "\n";
 
-			cadena += repository.getAllMembers().get(j).getAddress() + "\n";
-			cadena += repository.getAllMembers().get(j).getPhone() + "\n";
-			cadena += repository.getAllMembers().get(j).getTotalPaid() + "\n";
-			if (repository.getAllMembers().get(j).getDescription() != null) {
-				cadena += repository.getAllMembers().get(j).getDescription() + "\n";
-			}
-			cadena += "\n";
+			cadena += repository.getAllMembers().get(j).toString();
 		}
-
 
 		return cadena;
 	}
