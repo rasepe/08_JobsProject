@@ -55,19 +55,6 @@ public abstract class AbsStaffMember {
 
 
 	
-	@Override
-	public String toString() {
-		
-		String cadena ="";
 
-		cadena += "Id: " + getid() + "\n";
-		cadena += "Name: " + getName() + "\n";
-		cadena += "Address: " + getAddress() + "\n";
-		cadena += "Phone: " + getPhone() + "\n";
-		cadena += "Total paid: " +	getTotalPaid() + "\n";
-
-		return cadena;
-		
-	}
 
 }
